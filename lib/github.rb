@@ -14,7 +14,7 @@ def github_user_login token
   json = `curl -H "Authorization: Bearer #{token}" -s https://api.github.com/user` rescue "{}"
   user = JSON.parse json rescue {}
   puts "Response"
-  puts json
+  puts user
   user["login"] || "error"
 end
 
